@@ -44,7 +44,7 @@ public class UploadController{
 				Long size = savedFile.length();
 				fileService.saveIn(new modelinfo(fileid,name,size,path));
 				
-				return name+" is successfully uploaded file: " ;
+				return "Successfully uploaded file: "+name ;
 
 			} catch (Exception e) {
 				return "Failed to upload file:  " + e.getMessage();
@@ -53,5 +53,12 @@ public class UploadController{
 			return "Failed to upload file:  the file was empty.";
 		}
 	}
+	
+	
+	@RequestMapping("/files/{id}/info")
+	public modelinfo getFileInfo(@PathVariable  Integer id) {
+		return fileService.ById(id);
+	}
+
 
 }

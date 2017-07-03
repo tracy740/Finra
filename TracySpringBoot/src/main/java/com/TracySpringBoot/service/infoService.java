@@ -23,12 +23,18 @@ public class infoService {
 	public void saveIn(modelinfo file) {
 		DAO.save(file);
 	}
-	
+    public modelinfo ById (Integer id) {
+			return DAO.findOne(id);
+		}
 
-	
-	
-
-	
-	
 	
 }
+	
+
+	
+	
+
+	
+	
+	
+
